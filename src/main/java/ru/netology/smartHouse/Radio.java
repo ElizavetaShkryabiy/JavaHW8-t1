@@ -1,20 +1,13 @@
 package ru.netology.smartHouse;
 
+import java.util.Collections;
+
 public class Radio {
     //   Station unit
-    private String station;
+
     private int maxStation = 9;
     private int minStation = 1;
     private int currentStation;
-
-
-    public String getStation() {
-        return station;
-    }
-
-    public void setStation(String station) {
-        this.station = station;
-    }
 
     public int getMaxStation() {
         return maxStation;
@@ -38,70 +31,42 @@ public class Radio {
         this.currentStation = currentStation;
     }
 
-    public int ReturnToStart(int currentStation) {
+    public void NextStation() {
         if (currentStation == maxStation) {
-            return minStation;
+            currentStation = minStation;
         } else {
-            return currentStation = currentStation + 1;
+            currentStation = currentStation + 1;
         }
     }
 
-    public int ReturnToEnd(int currentStation) {
+    public void PrevStation() {
         if (currentStation == minStation) {
-            return maxStation;
+            currentStation = maxStation;
         } else {
-            return currentStation = currentStation - 1;
+            currentStation = currentStation - 1;
         }
     }
 
     // Volume unit
-    private String volume;
+
     private int maxVolume = 10;
     private int minVolume = 0;
     private int currentVolume;
 
-    public String getVolume() {
-        return volume;
-    }
+    public int getMaxVolume() {return maxVolume;}
 
-    public void setVolume(String station) {
-        this.volume = volume;
-    }
+    public int getMinVolume() {return minVolume;}
 
-    public int getMaxVolume() {
-        return maxVolume;
-    }
-
-    public int getMinVolume() {
-        return minVolume;
-    }
-
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
+    public int getCurrentVolume() {return currentVolume;}
 
     public void setCurrentVolume(int currentVolume) {
         if (currentVolume > maxVolume) {
-            return;
-        }
-        if (currentVolume < minVolume) {
-            return;
-        }
-        this.currentVolume = currentVolume;
-    }
-
-    public int StopWhenMaxVolume(int currentVolume) {
-        if (currentVolume >= maxVolume) {
             currentVolume = maxVolume;
         }
-        return currentVolume;
-    }
-
-    public int StopWhenMinVolume(int currentVolume) {
-        if (currentVolume <= minVolume) {
+        if (currentVolume < minVolume) {
             currentVolume = minVolume;
         }
-        return currentVolume;
+        this.currentVolume = currentVolume;
     }
 
 }
