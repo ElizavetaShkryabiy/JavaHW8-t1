@@ -7,24 +7,11 @@ public class Radio {
     private int minStation = 1;
     private int currentStation = 7;
 
-    //
-//    public boolean CorrectCurrentStation () {
-//        if (currentStation > maxStation) {
-//            return;
-//        }
-//        if (currentStation < minStation) {
-//            return;
-//        }
-//        this.currentStation = currentStation;
-//
-//    }
+
     public int getCurrentStation() {
         return currentStation;
     }
 
-//    public void setCurrentStation(int currentStation) {
-//        this.currentStation = currentStation;
-//    }
 
     public void setCheckCorrectCurrentStation(int currentStation) {
         if (currentStation > maxStation) {
@@ -78,9 +65,7 @@ public class Radio {
         return currentVolume;
     }
 
-//    public void setCurrentVolume(int currentVolume) {
-//        this.currentVolume = currentVolume;
-//    }
+
 
     public void setCheckCorrectCurrentVolume(int currentVolume) {
         if (currentVolume > maxVolume) {

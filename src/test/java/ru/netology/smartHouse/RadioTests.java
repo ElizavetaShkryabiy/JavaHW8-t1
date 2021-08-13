@@ -9,13 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 public class RadioTests {
 
 
-//    @Test
-//    public void shouldSetCurrentStation() {
-//        Radio station = new Radio();
-//        station.setCurrentStation(7);
-//        int actual = station.getCurrentStation();
-//        assertEquals(7, actual);
-//    }
+
 
     @Test
     public void shouldCheckThatCurrentStationIsOkToSet() {
@@ -101,13 +95,6 @@ public class RadioTests {
         assertEquals(5, actual);
     }
 
-//    @Test
-//    public void shouldSetCurrentVolume() {
-//        Radio volume = new Radio();
-//        volume.setCurrentVolume(6);
-//        int actual = volume.getCurrentVolume();
-//        assertEquals(6, actual);
-//    }
 
     @Test
     public void shouldSetCorrectCurrentVolume() {
