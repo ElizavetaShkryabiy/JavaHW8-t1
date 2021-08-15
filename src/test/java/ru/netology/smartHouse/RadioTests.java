@@ -9,8 +9,6 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 public class RadioTests {
 
 
-
-
     @Test
     public void shouldCheckThatCurrentStationIsOkToSet() {
         Radio station = new Radio();
@@ -18,6 +16,7 @@ public class RadioTests {
         int actual = station.getCurrentStation();
         assertEquals(8, actual);
     }
+
     @Test
     public void shouldCheckThatMoreThenMaxCurrentStationIsNotOkToSet() {
         Radio station = new Radio();
@@ -25,6 +24,7 @@ public class RadioTests {
         int actual = station.getCurrentStation();
         assertEquals(7, actual);
     }
+
     @Test
     public void shouldCheckThatLessThenMinCurrentStationIsNotOkToSet() {
         Radio station = new Radio();
@@ -66,8 +66,8 @@ public class RadioTests {
     @Test
     public void shouldChangeToNextStationWhenCurrentIsMax() {
         Radio station = new Radio();
-        station.nextStation();
-        int actual = station.nextStationWhenCurrentIsMax(9);
+        station.setCheckCorrectCurrentStation(9);
+        int actual = station.nextStationWhenCurrentIsMax();
         assertEquals(1, actual);
     }
 
@@ -82,8 +82,8 @@ public class RadioTests {
     @Test
     public void shouldChangeToPrevStationWhenCurrentIsMin() {
         Radio station = new Radio();
-        station.prevStation();
-        int actual = station.prevStationWhenCurrentIsMin(1);
+        station.setCheckCorrectCurrentStation(1);
+        int actual = station.prevStationWhenCurrentIsMin();
         assertEquals(9, actual);
     }
 
@@ -130,7 +130,8 @@ public class RadioTests {
     @Test
     public void shouldIncreaseVolumeWhenCurrentIsMax() {
         Radio volume = new Radio();
-        int actual = volume.increaseVolumeWhenCurrentIsMax(10);
+        volume.setCheckCorrectCurrentVolume(10) ;
+        int actual = volume.increaseVolumeWhenCurrentIsMax();
         assertEquals(10, actual);
     }
 
@@ -144,7 +145,8 @@ public class RadioTests {
     @Test
     public void shouldDecreaseVolumeWhenCurrentIsMin() {
         Radio volume = new Radio();
-        int actual = volume.decreaseVolumeWhenCurrentIsMin(0);
+        volume.setCheckCorrectCurrentVolume(0) ;
+        int actual = volume.decreaseVolumeWhenCurrentIsMin();
         assertEquals(0, actual);
     }
 
