@@ -59,15 +59,15 @@ public class RadioTests {
     @Test
     public void shouldChangeToNextStation() {
         Radio station = new Radio();
-        int actual = station.NextStation();
+        int actual = station.nextStation();
         assertEquals(8, actual);
     }
 
     @Test
     public void shouldChangeToNextStationWhenCurrentIsMax() {
         Radio station = new Radio();
-        station.NextStation();
-        int actual = station.NextStationWhenCurrentIsMax(9);
+        station.nextStation();
+        int actual = station.nextStationWhenCurrentIsMax(9);
         assertEquals(1, actual);
     }
 
@@ -75,15 +75,15 @@ public class RadioTests {
     @Test
     public void shouldChangeToPrevStation() {
         Radio station = new Radio();
-        int actual = station.PrevStation();
+        int actual = station.prevStation();
         assertEquals(6, actual);
     }
 
     @Test
     public void shouldChangeToPrevStationWhenCurrentIsMin() {
         Radio station = new Radio();
-        station.PrevStation();
-        int actual = station.PrevStationWhenCurrentIsMin(1);
+        station.prevStation();
+        int actual = station.prevStationWhenCurrentIsMin(1);
         assertEquals(9, actual);
     }
 
@@ -123,28 +123,28 @@ public class RadioTests {
     @Test
     public void shouldIncreaseVolume() {
         Radio volume = new Radio();
-        int actual = volume.IncreaseVolume();
+        int actual = volume.increaseVolume();
         assertEquals(6, actual);
     }
 
     @Test
     public void shouldIncreaseVolumeWhenCurrentIsMax() {
         Radio volume = new Radio();
-        int actual = volume.IncreaseVolumeWhenCurrentIsMax(10);
+        int actual = volume.increaseVolumeWhenCurrentIsMax(10);
         assertEquals(10, actual);
     }
 
     @Test
     public void shouldDecreaseVolume() {
         Radio volume = new Radio();
-        int actual = volume.DecreaseVolume();
+        int actual = volume.decreaseVolume();
         assertEquals(4, actual);
     }
 
     @Test
     public void shouldDecreaseVolumeWhenCurrentIsMin() {
         Radio volume = new Radio();
-        int actual = volume.DecreaseVolumeWhenCurrentIsMin(0);
+        int actual = volume.decreaseVolumeWhenCurrentIsMin(0);
         assertEquals(0, actual);
     }
 
