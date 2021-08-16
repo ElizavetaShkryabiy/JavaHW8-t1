@@ -1,5 +1,13 @@
 package ru.netology.smartHouse;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+
 public class Radio {
     //   Station unit
     private String station;
@@ -31,11 +39,6 @@ public class Radio {
         this.minVolume = 0;
         this.currentVolume = currentVolume;
     }
-
-    public int getCurrentStation() {
-        return currentStation;
-    }
-
 
     public void setCheckCorrectCurrentStation(int currentStation) {
         if (currentStation > maxStation) {
@@ -79,10 +82,6 @@ public class Radio {
     }
 
     // Volume unit
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
-
 
     public int increaseVolume() {
         if (currentVolume < maxVolume) {
