@@ -3,13 +3,34 @@ package ru.netology.smartHouse;
 public class Radio {
     //   Station unit
     private String station;
-    private int maxStation = 9;
-    private int minStation = 1;
-    private int currentStation = 7;
+    private int maxStation;
+    private int minStation;
+    private int currentStation;
     private String volume;
-    private int maxVolume = 10;
-    private int minVolume = 0;
+    private int maxVolume;
+    private int minVolume;
+    private int currentVolume;
 
+
+    public Radio(String station, int maxStation, int currentStation) {
+        this.station = station;
+        this.maxStation = maxStation;
+        this.minStation = 0;
+        this.currentStation = currentStation;
+    }
+
+    public Radio(String station, int currentStation) {
+        this.station = station;
+        this.currentStation = currentStation;
+        this.maxStation = 10;
+        this.minStation = 0;
+    }
+
+    public Radio(int currentVolume) {
+        this.maxVolume = 100;
+        this.minVolume = 0;
+        this.currentVolume = currentVolume;
+    }
 
     public int getCurrentStation() {
         return currentStation;
@@ -35,7 +56,7 @@ public class Radio {
         return currentStation;
     }
 
-    public int nextStationWhenCurrentIsMax () {
+    public int nextStationWhenCurrentIsMax() {
         if (currentStation == maxStation) {
             this.currentStation = minStation;
         }
@@ -58,23 +79,10 @@ public class Radio {
     }
 
     // Volume unit
-
-    private int currentVolume = 5;
-
     public int getCurrentVolume() {
         return currentVolume;
     }
 
-
-    public void setCheckCorrectCurrentVolume(int currentVolume) {
-        if (currentVolume > maxVolume) {
-            return;
-        }
-        if (currentVolume < minVolume) {
-            return;
-        }
-        this.currentVolume = currentVolume;
-    }
 
     public int increaseVolume() {
         if (currentVolume < maxVolume) {
