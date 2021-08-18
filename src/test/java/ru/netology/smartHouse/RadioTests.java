@@ -10,15 +10,7 @@ public class RadioTests {
 
 
     @Test
-    public void shouldSetCurrentStation() {
-        Radio station = new Radio("station", 100, 56);
-
-        int actual = station.getCurrentStation();
-        assertEquals(56, actual);
-    }
-
-    @Test
-    public void shouldCheckThatCurrentStationIsOkToSet() {
+    public void shouldCheckThatCurrentStationIsOkToSet3Variables() {
         Radio station = new Radio("station", 100, 56);
         station.setCheckCorrectCurrentStation(30);
         int actual = station.getCurrentStation();
@@ -26,7 +18,7 @@ public class RadioTests {
     }
 
     @Test
-    public void shouldCheckThatMoreThenMaxCurrentStationIsNotOkToSet() {
+    public void shouldCheckThatMoreThenMaxCurrentStationIsNotOkToSet3Variables() {
         Radio station = new Radio("station", 100, 2);
         station.setCheckCorrectCurrentStation(102);
         int actual = station.getCurrentStation();
@@ -34,7 +26,7 @@ public class RadioTests {
     }
 
     @Test
-    public void shouldCheckThatLessThenMinCurrentStationIsNotOkToSet() {
+    public void shouldCheckThatLessThenMinCurrentStationIsNotOkToSet2Variables() {
         Radio station = new Radio("station", 7);
         station.setCheckCorrectCurrentStation(-1);
         int actual = station.getCurrentStation();
@@ -42,7 +34,7 @@ public class RadioTests {
     }
 
     @Test
-    public void shouldGetCurrentStation() {
+    public void shouldGetCurrentStation2Variables() {
         Radio station = new Radio("station", 7);
         int actual = station.getCurrentStation();
         assertEquals(7, actual);
@@ -50,14 +42,14 @@ public class RadioTests {
 
 
     @Test
-    public void shouldChangeToNextStation() {
+    public void shouldChangeToNextStation2Variables() {
         Radio station = new Radio("station", 7);
         int actual = station.nextStation();
         assertEquals(8, actual);
     }
 
     @Test
-    public void shouldChangeToNextStationWhenCurrentIsMax() {
+    public void shouldChangeToNextStationWhenCurrentIsMax3Variables() {
         Radio station = new Radio("station", 50, 50);
 
         int actual = station.nextStation();
@@ -66,14 +58,14 @@ public class RadioTests {
 
 
     @Test
-    public void shouldChangeToPrevStation() {
+    public void shouldChangeToPrevStation2Variables() {
         Radio station = new Radio("station", 7);
         int actual = station.prevStation();
         assertEquals(6, actual);
     }
 
     @Test
-    public void shouldChangeToPrevStationWhenCurrentIsMin() {
+    public void shouldChangeToPrevStationWhenCurrentIsMin3Variables() {
         Radio station = new Radio("station", 50, 0);
 
         int actual = station.prevStation();
@@ -119,4 +111,69 @@ public class RadioTests {
         assertEquals(0, actual);
     }
 
+//
+
+
+    @Test
+    public void shouldCheckThatCurrentStationIsOkToSet2Variables() {
+        Radio station = new Radio("station", 9);
+        station.setCheckCorrectCurrentStation(5);
+        int actual = station.getCurrentStation();
+        assertEquals(5, actual);
+    }
+
+    @Test
+    public void shouldCheckThatMoreThenMaxCurrentStationIsNotOkToSet2Variables() {
+        Radio station = new Radio("station", 2);
+        station.setCheckCorrectCurrentStation(10);
+        int actual = station.getCurrentStation();
+        assertEquals(2, actual);
+    }
+
+    @Test
+    public void shouldCheckThatLessThenMinCurrentStationIsNotOkToSet3Variables() {
+        Radio station = new Radio("station", 20, 7);
+        station.setCheckCorrectCurrentStation(-1);
+        int actual = station.getCurrentStation();
+        assertEquals(7, actual);
+    }
+
+    @Test
+    public void shouldGetCurrentStation3Variables() {
+        Radio station = new Radio("station", 19, 7);
+        int actual = station.getCurrentStation();
+        assertEquals(7, actual);
+    }
+
+
+    @Test
+    public void shouldChangeToNextStation3Variables() {
+        Radio station = new Radio("station", 30, 7);
+        int actual = station.nextStation();
+        assertEquals(8, actual);
+    }
+
+    @Test
+    public void shouldChangeToNextStationWhenCurrentIsMax2Variables() {
+        Radio station = new Radio("station", 9);
+
+        int actual = station.nextStation();
+        assertEquals(0, actual);
+    }
+
+
+    @Test
+    public void shouldChangeToPrevStation3Variables() {
+        Radio station = new Radio("station", 40, 7);
+        int actual = station.prevStation();
+        assertEquals(6, actual);
+    }
+
+    @Test
+    public void shouldChangeToPrevStationWhenCurrentIsMin2Variables() {
+        Radio station = new Radio("station", 0);
+
+        int actual = station.prevStation();
+        assertEquals(9, actual);
+    }
 }
