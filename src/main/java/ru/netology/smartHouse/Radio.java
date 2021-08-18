@@ -14,7 +14,6 @@ public class Radio {
     private int maxStation;
     private int minStation;
     private int currentStation;
-    private String volume;
     private int maxVolume;
     private int minVolume;
     private int currentVolume;
@@ -87,7 +86,7 @@ public class Radio {
 
         if (currentVolume > minVolume) {
             currentVolume = currentVolume - 1;
-        }else{
+        } else {
             currentVolume = minVolume;
         }
         return currentVolume;

@@ -8,6 +8,96 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class RadioTests {
 
+    @Test
+    public void shouldSetStringStation() {
+        Radio station = new Radio("station", 100, 56);
+        station.setStation("statio");
+        String actual = station.getStation();
+        assertEquals("statio", actual);
+    }
+
+    @Test
+    public void shouldGetStringStation() {
+        Radio station = new Radio("statio", 100, 56);
+
+        String actual = station.getStation();
+        assertEquals("statio", actual);
+    }
+
+    @Test
+    public void shouldSetMaxStation() {
+        Radio station = new Radio("station", 100, 56);
+        station.setMaxStation(20);
+        int actual = station.getMaxStation();
+        assertEquals(20, actual);
+    }
+
+    @Test
+    public void shouldGetMaxStation() {
+        Radio station = new Radio("station", 100, 56);
+
+        int actual = station.getMaxStation();
+        assertEquals(100, actual);
+    }
+
+    @Test
+    public void shouldGetMinStation() {
+        Radio station = new Radio("station", 100, 56);
+
+        int actual = station.getMinStation();
+        assertEquals(0, actual);
+    }
+
+    @Test
+    public void shouldSetMinStation() {
+        Radio station = new Radio("station", 100, 56);
+        station.setMinStation(1);
+        int actual = station.getMinStation();
+        assertEquals(1, actual);
+    }
+
+    @Test
+    public void shouldJustSetCurrentStation() {
+        Radio station = new Radio("station", 100, 56);
+        station.setCurrentStation(54);
+        int actual = station.getCurrentStation();
+        assertEquals(54, actual);
+    }
+
+    @Test
+    public void shouldSetCurrentVolume() {
+        Radio volume = new Radio(50);
+        volume.setCurrentVolume(10);
+        int actual = volume.getCurrentVolume();
+        assertEquals(10, actual);
+    }
+
+    @Test
+    public void shouldSetMaxVolume() {
+        Radio volume = new Radio(50);
+        volume.setMaxVolume(10);
+        int actual = volume.getMaxVolume();
+        assertEquals(10, actual);
+    }
+
+    @Test
+    public void shouldSetMinVolume() {
+        Radio volume = new Radio(50);
+        volume.setMinVolume(10);
+        int actual = volume.getMinVolume();
+        assertEquals(10, actual);
+    }
+    @Test
+    public void shouldGetMinVolume() {
+        Radio volume = new Radio(50);
+
+        int actual = volume.getMinVolume();
+        assertEquals(0, actual);
+    }
+
+
+
+//    tests with logic
 
     @Test
     public void shouldSetCurrentStation() {
