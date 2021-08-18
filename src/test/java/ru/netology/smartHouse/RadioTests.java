@@ -60,7 +60,7 @@ public class RadioTests {
     public void shouldChangeToNextStationWhenCurrentIsMax() {
         Radio station = new Radio("station", 50, 50);
 
-        int actual = station.nextStationWhenCurrentIsMax();
+        int actual = station.nextStation();
         assertEquals(0, actual);
     }
 
@@ -76,7 +76,7 @@ public class RadioTests {
     public void shouldChangeToPrevStationWhenCurrentIsMin() {
         Radio station = new Radio("station", 50, 0);
 
-        int actual = station.prevStationWhenCurrentIsMin();
+        int actual = station.prevStation();
         assertEquals(50, actual);
     }
 
@@ -100,7 +100,7 @@ public class RadioTests {
     public void shouldIncreaseVolumeWhenCurrentIsMax() {
         Radio volume = new Radio(100);
 
-        int actual = volume.increaseVolumeWhenCurrentIsMax();
+        int actual = volume.increaseVolume();
         assertEquals(100, actual);
     }
 
@@ -115,7 +115,7 @@ public class RadioTests {
     public void shouldDecreaseVolumeWhenCurrentIsMin() {
         Radio volume = new Radio(0);
 
-        int actual = volume.decreaseVolumeWhenCurrentIsMin();
+        int actual = volume.decreaseVolume();
         assertEquals(0, actual);
     }
 
