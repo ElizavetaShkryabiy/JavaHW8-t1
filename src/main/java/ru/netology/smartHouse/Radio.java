@@ -29,7 +29,7 @@ public class Radio {
     public Radio(String station, int currentStation) {
         this.station = station;
         this.currentStation = currentStation;
-        this.maxStation = 10;
+        this.maxStation = 9;
         this.minStation = 0;
     }
 
