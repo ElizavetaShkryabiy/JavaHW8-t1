@@ -52,31 +52,22 @@ public class Radio {
     public int nextStation() {
         if (currentStation < maxStation) {
             currentStation = currentStation + 1;
+        } else {
+            currentStation = minStation;
+
         }
         return currentStation;
-    }
-
-    public int nextStationWhenCurrentIsMax() {
-        if (currentStation == maxStation) {
-            this.currentStation = minStation;
-        }
-        return this.currentStation;
     }
 
     public int prevStation() {
         if (currentStation > minStation) {
             currentStation = currentStation - 1;
+        } else {
+            currentStation = maxStation;
         }
         return currentStation;
     }
 
-    public int prevStationWhenCurrentIsMin() {
-
-        if (currentStation == minStation) {
-            this.currentStation = maxStation;
-        }
-        return this.currentStation;
-    }
 
     // Volume unit
     public int getCurrentVolume() {
@@ -87,14 +78,8 @@ public class Radio {
     public int increaseVolume() {
         if (currentVolume < maxVolume) {
             currentVolume = currentVolume + 1;
-        }
-        return this.currentVolume;
-    }
-
-    public int increaseVolumeWhenCurrentIsMax() {
-
-        if (currentVolume == maxVolume) {
-            this.currentVolume = maxVolume;
+        } else {
+            currentVolume = maxVolume;
         }
         return this.currentVolume;
     }
@@ -103,16 +88,11 @@ public class Radio {
 
         if (currentVolume > minVolume) {
             currentVolume = currentVolume - 1;
+        }else{
+            currentVolume = minVolume;
         }
         return currentVolume;
     }
 
-    public int decreaseVolumeWhenCurrentIsMin() {
-
-        if (currentVolume == minVolume) {
-            this.currentVolume = minVolume;
-        }
-        return this.currentVolume;
-    }
 }
 
