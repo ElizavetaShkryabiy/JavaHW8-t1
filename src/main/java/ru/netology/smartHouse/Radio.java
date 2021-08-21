@@ -2,39 +2,34 @@ package ru.netology.smartHouse;
 
 public class Radio {
     //   Station unit
-    private String station;
-    private int maxStation;
-    private int minStation;
+
+    private int stationAmount;
+    private int maxStation = stationAmount - 1;
+    private int minStation = 0;
     private int currentStation;
-    private String volume;
-    private int maxVolume;
-    private int minVolume;
+
+    private int maxVolume = 100;
+    private int minVolume = 0;
     private int currentVolume;
 
 
-    public Radio(String station, int maxStation, int currentStation) {
-        this.station = station;
-        this.maxStation = maxStation;
-        this.minStation = 0;
-        this.currentStation = currentStation;
+    public Radio(int stationAmount) {
+
+        this.maxStation = stationAmount -1;
+
     }
 
-    public Radio(String station, int currentStation) {
-        this.station = station;
-        this.currentStation = currentStation;
-        this.maxStation = 9;
-        this.minStation = 0;
-    }
+    public Radio() {
+        stationAmount = 10;
+        this.maxStation = stationAmount -1;
 
-    public Radio(int currentVolume) {
-        this.maxVolume = 100;
-        this.minVolume = 0;
-        this.currentVolume = currentVolume;
     }
 
     public int getCurrentStation() {
         return currentStation;
     }
+
+    public int setCurrentStation (int current){return this.currentStation = current;}
 
 
     public void setCheckCorrectCurrentStation(int currentStation) {
@@ -74,6 +69,8 @@ public class Radio {
         return currentVolume;
     }
 
+    public int setCurrentVolume (int currentVolume){return this.currentVolume = currentVolume;}
+
 
     public int increaseVolume() {
         if (currentVolume < maxVolume) {
@@ -88,7 +85,7 @@ public class Radio {
 
         if (currentVolume > minVolume) {
             currentVolume = currentVolume - 1;
-        }else{
+        } else {
             currentVolume = minVolume;
         }
         return currentVolume;
